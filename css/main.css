@@ -1,0 +1,24 @@
+body {
+  background: white;
+  color: #323232;
+
+  margin: 0;
+  height: 100vh;
+  
+  font-family: Helvetica neue, roboto;
+}
+.final-remarks {
+    margin-top: 50px;
+}
+
+.final-remarks span {
+    font-size: x-large;
+    color: blue;
+}
+.ans {
+    margin-left: 20px;
+}
+#final-mark {
+    font-size: x-large;
+    color: blue;
+}
