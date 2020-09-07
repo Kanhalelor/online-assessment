@@ -1,9 +1,35 @@
-// create a answers array
+// const stName = document.getElementById('st-name');
+// const stNum = document.getElementById('st-num');
+// const studentName = stName.value;
+// const studentNumber = stNum.value;
+
+const submit = document.getElementById('btn-submit')
+
+submit.addEventListener('click', (e) => {
+  const stName = document.getElementById('st-name');
+  const stNum = document.getElementById('st-num');
+  const studentName = stName.value;
+  const studentNumber = stNum.value;
+
+  storeStudentData();
+  function storeStudentData() {
+  window.localStorage.setItem('student', JSON.stringify([studentName, studentNumber]))
+}
+
+})
+
+//========= create an answers array =============== //
 const answers = [1990, 'South Africa',
     'Sam Nujoma', 'Bushmen or San People', 1917];
 // debugg
 //console.log(typeof(answers[0]))
 // console.log(typeof(answers[0].toString()))
+
+
+/*==== This main function is not really neccessary but 
+    I am coming from a Java-centric programming style
+    so, I thought it was neccessary to use it here
+    ======*/
 
 function main() {
   questionOne();
@@ -29,7 +55,7 @@ function questionOne() {
   // console.log(checkBoxes1[0].checked)
   for ( let i = 0; i < checkBoxes1.length; i++ ) {
     if ( checkBoxes1[i].checked === false ) {
-      checkBoxes1[i].addEventListener('click', function(e) {
+      checkBoxes1[i].addEventListener('click', (e) => {
         checkBoxes1[i].checked = true;
         // debugg
         // console.log(checkBoxes1[i].nextElementSibling.textContent);
@@ -59,7 +85,7 @@ function questionTwo() {
   const  checkBoxes2 = document.getElementsByClassName('q2');
   for ( let i = 0; i < checkBoxes2.length; i++ ) {
     if ( checkBoxes2[i].checked === false ) {
-      checkBoxes2[i].addEventListener('click', function(e) {
+      checkBoxes2[i].addEventListener('click', (e) => {
         checkBoxes2[i].checked = true;
         if ( checkBoxes2[i].nextElementSibling.textContent === answers[1] ) {
           scoreTracker += 1;
@@ -79,14 +105,13 @@ function questionTwo() {
   }
 }
 
-
 // question 3
 function questionThree() {
   const checkBoxes3 = document.getElementsByClassName('q3');
 
   for ( let i = 0; i < checkBoxes3.length; i++ ) {
     if ( checkBoxes3[i].checked === false ) {
-      checkBoxes3[i].addEventListener('click', function(e) {
+      checkBoxes3[i].addEventListener('click', (e) => {
         checkBoxes3[i].checked = true;
         if ( checkBoxes3[i].nextElementSibling.textContent === answers[2] ) {
           scoreTracker += 1;
@@ -112,7 +137,7 @@ function questionFour() {
 
   for ( let i = 0; i < checkBoxes4.length; i++ ) {
     if ( checkBoxes4[i].checked === false ) {
-      checkBoxes4[i].addEventListener('click', function(e) {
+      checkBoxes4[i].addEventListener('click', (e) => {
         checkBoxes4[i].checked = true;
         if ( checkBoxes4[i].nextElementSibling.textContent === answers[3] ) {
           scoreTracker += 1;
@@ -138,7 +163,7 @@ function questionFive() {
 
   for ( let i = 0; i < checkBoxes5.length; i++ ) {
     if ( checkBoxes5[i].checked === false ) {
-      checkBoxes5[i].addEventListener('click', function(e) {
+      checkBoxes5[i].addEventListener('click', (e) => {
         checkBoxes5[i].checked = true;
         if ( checkBoxes5[i].nextElementSibling.textContent === answers[4].toString() ) {
           scoreTracker += 1;
@@ -164,11 +189,18 @@ const SubmitButton = document.getElementById('sbmt').addEventListener('click', g
 function getResults(e) {
   // debugg
   // console.log(totalScore);
-  alert("You scored "+scoreTracker.toString() + " out of "+totalScore.length.toString());
-  const totalMarks = document.getElementById('total-marks');
-  totalMarks.innerHTML = totalScore.length;
-  let finalMarks = document.getElementById('final-mark');
-  finalMarks.innerHTML = scoreTracker;
+ 
+  confirm("Have you answered all the questions?");
+  if ( confirm ) {
+    alert("You scored "+scoreTracker.toString() + " out of "+totalScore.length.toString());
+    const totalMarks = document.getElementById('total-marks');
+    totalMarks.innerHTML = totalScore.length;
+    let finalMarks = document.getElementById('final-mark');
+    finalMarks.innerHTML = scoreTracker;
+  } else {
+    e.stopPropagation();
+  }
+  
 }
 
-// --------------------------end------------------------------------//
+//==================================================  end ========================================//
