@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
-    <meta charset="">
+    <meta charset="UTF-8">
+    <meta author="Kanhalelo Robson">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -22,31 +23,43 @@
                 <span style="font-weight: bold;">TAKE YOUR TIME</span>
             </div>
         </div>
+        <br>
+        <form class="w3-container w3-center">
+          <h2 class="w3-center w3-text-red ">Fill in your details below</h2>
+          <label class="w3-text-blue" for="name">Name: </label>
+          <input id="st-name" type="text" class="w3-input w3-border w3-center">
+          <label class="w3-text-blue" for="studentID">Student ID</label>
+          <input id="st-num" type="text" class="w3-input w3-border w3-center">
+        </form>
+         <div class="w3-center w3-margin">
+           <input id="btn-submit" class="w3-btn w3-teal w3-hover-red w3-padding-large" type="submit" name="submit">
+         </div>
+        <br>
         <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">1. When did Namibia got independence?</h5>
         <li type="1" style="list-style-type:none; padding: 0;">
             <ul><input id="p1" class="w3-check q1" type="checkbox"><b class="ans">1991</b></ul>
             <ul><input id="p2" class="w3-check q1" type="checkbox"><b class="ans">2000</b></ul>
             <ul><input id="p3" class="w3-check q1" type="checkbox"><b class="ans">1990</b></ul>
         </li>
-        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">1. From which country did Namibia got Independ from?</h5>
+        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">2. From which country did Namibia got Independ from?</h5>
         <li type="1" style="list-style-type:none; padding: 0;">
             <ul><input id="p1" class="w3-check q2" type="checkbox"><b class="ans">German</b></ul>
             <ul><input id="p2" class="w3-check q2" type="checkbox"><b class="ans">South Africa</b></ul>
             <ul><input id="p3" class="w3-check q2" type="checkbox"><b class="ans">France</b></ul>
         </li>
-        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">1. Who is the founding father of the Namibian Nation?</h5>
+        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">3. Who is the founding father of the Namibian Nation?</h5>
         <li type="1" style="list-style-type:none; padding: 0;">
             <ul><input id="p1" class="w3-check q3" type="checkbox"><b class="ans">Panduleni Iitula</b></ul>
             <ul><input id="p2" class="w3-check q3" type="checkbox"><b class="ans">Hifikepunye Pohamba</b></ul>
             <ul><input id="p3" class="w3-check q3" type="checkbox"><b class="ans">Sam Nujoma</b></ul>
         </li>
-        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">1. The oldest inhabitants of Namibia are?</h5>
+        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">4. The oldest inhabitants of Namibia are?</h5>
         <li type="1" style="list-style-type:none; padding: 0;">
             <ul><input id="p1" class="w3-check q4" type="checkbox"><b class="ans">Bushmen or San People</b></ul>
             <ul><input id="p2" class="w3-check q4" type="checkbox"><b class="ans">Hereros</b></ul>
             <ul><input id="p3" class="w3-check q4" type="checkbox"><b class="ans">Wamboes</b></ul>
         </li>
-        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">1. Mandume Ya Ndemufayo, the king of the Kwanyama of Ovamboland, was killed in?</h5>
+        <h5 class="w3-text-blue query" style="margin-left: 40px; color: blue;">5. Mandume Ya Ndemufayo, the king of the Kwanyama of Ovamboland, was killed in?</h5>
         <li type="1" style="list-style-type:none; padding: 0;">
             <ul><input id="p1" class="w3-check q5" type="checkbox"><b class="ans">1933</b></ul>
             <ul><input id="p2" class="w3-check q5" type="checkbox"><b class="ans">1917</b></ul>
@@ -54,8 +67,8 @@
         </li>
         <div class="w3-center final-remarks">
             <button id="sbmt" class="w3-btn w3-teal w3-hover-red w3-padding-large w3-margin" type="submit">SUBMIT</button><br>
-            <span>Total: </span><span id="total-marks"></span><br>
-            <span>Your Score: </span><span id="final-mark" style="color: blue;"></span>
+            <span>Total: </span><span class="w3-text-green" id="total-marks"></span><br>
+            <span>Your Score: </span><span id="final-mark" style="color: ;"></span>
         </div>
         <hr>
         <footer class="w3-container w3-teal">
