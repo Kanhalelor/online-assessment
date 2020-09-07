@@ -5,7 +5,7 @@ body {
   margin: 0;
   height: 100vh;
   
-  font-family: Helvetica neue, roboto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .final-remarks {
     margin-top: 50px;
@@ -18,7 +18,29 @@ body {
 .ans {
     margin-left: 20px;
 }
+
 #final-mark {
     font-size: x-large;
     color: blue;
+}
+#sbmt:focus {
+  font-weight: bold;
+  border: none;
+}
+
+input[type='checkbox']:checked + b {
+  color: #f8ab87;
+}
+
+input[class*="w3-input"]:focus {
+  color: #e98e06;
+  border-bottom: 5px solid firebrick;
+}
+
+@media screen and (min-width: 768px) {
+  #st-name,
+  #st-num {
+    width: 50%;
+    margin: auto;
+  }
 }
