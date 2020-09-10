@@ -3,28 +3,17 @@
 // const studentName = stName.value;
 // const studentNumber = stNum.value;
 
-const submit = document.getElementById('btn-submit')
-
-submit.addEventListener('click', (e) => {
-  const stName = document.getElementById('st-name');
-  const stNum = document.getElementById('st-num');
-  const studentName = stName.value;
-  const studentNumber = stNum.value;
-
-  storeStudentData();
-  function storeStudentData() {
-  window.localStorage.setItem('student', JSON.stringify([studentName, studentNumber]))
-}
-
-})
+const submit = document.getElementById('btn-submit');
 
 //========= create an answers array =============== //
-const answers = [1990, 'South Africa',
-    'Sam Nujoma', 'Bushmen or San People', 1917];
+const answers = ['Charles Babbage', 'Debugging',
+    'Machine Code', 'Infinite loop', 8];
 // debugg
 //console.log(typeof(answers[0]))
 // console.log(typeof(answers[0].toString()))
 
+// our students data will be stored in an odjects with {Name: ---, Number: --} key value pairs
+students = {};
 
 /*==== This main function is not really neccessary but 
     I am coming from a Java-centric programming style
@@ -183,7 +172,8 @@ function questionFive() {
   }
 }
 
-// button events 
+// events
+
 const SubmitButton = document.getElementById('sbmt').addEventListener('click', getResults);
 
 function getResults(e) {
@@ -192,15 +182,37 @@ function getResults(e) {
  
   confirm("Have you answered all the questions?");
   if ( confirm ) {
-    alert("You scored "+scoreTracker.toString() + " out of "+totalScore.length.toString());
+    alert(`You scored ${scoreTracker.toString()} out of ${totalScore.length.toString()}`);
     const totalMarks = document.getElementById('total-marks');
     totalMarks.innerHTML = totalScore.length;
     let finalMarks = document.getElementById('final-mark');
     finalMarks.innerHTML = scoreTracker;
   } else {
-    e.stopPropagation();
+    e.preventDefault();
   }
   
+}
+submit.addEventListener('click', (e) => {
+
+  const stName = document.getElementById('st-name');
+  const stNum = document.getElementById('st-num');
+  const studentName = stName.value;
+  const studentNumber = stNum.value;
+
+  alert(`Welcome ${studentName}! Let's get started`);
+
+  students.name = studentName;
+  students.number = studentNumber;
+
+  storeStudentData();
+
+})
+
+// store student data to local storage
+
+function storeStudentData() {
+  console.log(students)
+  window.localStorage.setItem('Students', JSON.stringify())
 }
 
 //==================================================  end ========================================//
